@@ -12,6 +12,9 @@
                 <li class="nav-item">
                     <a class="nav-link<?php if (@$activeNavItem == 'patients') echo ' active'; ?>" href="<?= $this->Url->build('/patients') ?>">Patients</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link<?php if (@$activeNavItem == 'users') echo ' active'; ?>" href="<?= $this->Url->build('/users') ?>">Utilisateurs</a>
+                </li>
             </ul>
             <div class="dropdown text-end">
                 <a href="#" class="d-block text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown">

@@ -1,28 +1,25 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \App\Model\Entity\User $user
+ * @var \App\Model\Entity\Patient $patient
  */
 ?>
-<div class="row">
-    <aside class="column">
-        <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('List Users'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Nouvel utilisateur</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-    </aside>
-    <div class="column-responsive column-80">
-        <div class="users form content">
-            <?= $this->Form->create($user) ?>
-            <fieldset>
-                <legend><?= __('Add User') ?></legend>
-                <?php
-                    echo $this->Form->control('email');
-                    echo $this->Form->control('password');
-                ?>
-            </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
-            <?= $this->Form->end() ?>
+        <?= $this->Form->create($user, ['novalidate']) ?>
+        <div class="modal-body">
+            <?= $this->Flash->render(); ?>
+
+            <?= $this->element('../users/_form'); ?>
         </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary float-start" data-bs-dismiss="modal"><i class="bi-arrow-counterclockwise"></i> Annuler</button>
+            <button type="submit" class="btn btn-primary float-end"><i class="bi-save"></i> Enregistrer</button>
+        </div>
+        <?= $this->Form->end() ?>
     </div>
 </div>
