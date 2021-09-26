@@ -26,13 +26,13 @@ $(function() {
         }],
         allDaySlot: false,
         nowIndicator: true,
-        events: '/rendezvous/feed',
+        events: location.pathname + 'rendezvous/feed',
         displayEventTime: false,
         eventClick: function(info) {
-            Xcrud.showDialog([], {'url' : '/rendezvous/edit/' + info.event.id})
+            Xcrud.showDialog([], {'url' : location.pathname + 'rendezvous/edit/' + info.event.id})
         },
         select: function(info) {
-            Xcrud.showDialog([], {'url' : '/rendezvous/add?start=' + info.start.toISOString() + '&end=' + info.end.toISOString()})
+            Xcrud.showDialog([], {'url' : location.pathname + 'rendezvous/add?start=' + info.start.toISOString() + '&end=' + info.end.toISOString()})
         }
     });
     calendar.render();
